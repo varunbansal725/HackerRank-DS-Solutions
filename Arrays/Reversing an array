@@ -1,0 +1,29 @@
+C++ code
+======================================
+vector<int> reverseArray(vector<int> a) {
+    
+        int aux = 0;
+        int n = a.size();
+        for (int i = 0; i < n/2; ++i) {
+                aux = a[n-i-1];
+                a[n-i-1] = a[i];
+                a[i] = aux;
+        }
+        return a;
+}
+
+
+C code
+==========================
+int* reverseArray(int a_count, int* a, int* result_count) {
+    int i=0;
+    int temp=0;
+    
+    for(i=0; i<*result_count/2; i++) {
+        temp=a[*result_count-i-1];
+        a[*result_count-i-1]=a[i];
+        a[i]=temp;
+        
+    }
+    return a;
+}
