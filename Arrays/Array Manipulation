@@ -1,0 +1,19 @@
+
+C code
+
+
+
+long arrayManipulation(int n, int queries_rows, int queries_columns, int** queries) {
+    int i=1,j,k=0;
+    long int max=-32766;
+    long int *result=(long int *)malloc((n+1)*sizeof(long int));
+    for(i=1; i<=queries_rows; i++) {
+        k=i-1;
+        for(j=queries[k][0]; j<=queries[k][1]; j++) {
+            result[j]+=queries[k][2];
+            if(result[j] > max)
+                max=result[j];
+        }
+    }    
+    return max;
+}
