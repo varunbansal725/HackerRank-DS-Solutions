@@ -1,0 +1,41 @@
+C++ code
+===============================
+SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
+    SinglyLinkedListNode* p = new SinglyLinkedListNode(data);
+    SinglyLinkedListNode *tail=head;
+    p->data=data;
+    p->next=NULL;
+    if(head==NULL) {
+        head=p;
+    }
+    
+    else {
+        while(tail->next)
+            tail=tail->next;
+        tail->next=p;
+        tail=p;
+    }
+    
+    return head;
+}
+
+C code
+===============================
+SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
+    SinglyLinkedListNode* p = (SinglyLinkedListNode *)mallon(sizeof(SinglyLinkedListNode(data);
+    SinglyLinkedListNode *tail=head;
+    p->data=data;
+    p->next=NULL;
+    if(head==NULL) {
+        head=p;
+    }
+    
+    else {
+        while(tail->next)
+            tail=tail->next;
+        tail->next=p;
+        tail=p;
+    }
+    
+    return head;
+}
